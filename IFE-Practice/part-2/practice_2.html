@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>practice_2</title>
+</head>
+<body>
+    <h3>污染城市列表</h3>
+    <ul id="aqi-list">
+    	
+    </ul>
+    <script type="text/javascript">
+    	var aqiDate = [
+    		["北京", 90],
+    		["上海", 50],
+    		["福州", 10],
+    		["广州", 50],
+    		["成都", 90],
+    		["西安", 100]
+    	];
+    	(function(){
+    		//检查ID是否存在
+    		if(!document.getElementById("aqi-list")) return false;
+    		var newArr = [];
+    		for(var i = 0; i < aqiDate.length; i++){
+    			if(aqiDate[i][1] > 60){
+    				newArr.push([aqiDate[i][0],aqiDate[i][1]]);
+    			}
+    		}
+    		newArr.sort(function(a, b){
+    			return b[1] - a[1];
+    		})
+    		var all = "";
+    		for(var i = 0; i < newArr.length; i++){
+    			var rank = i+1;
+    			switch(rank){
+    				case 1:
+    				rank_numb = "第一名：";
+    				break;
+    				case 2:
+    				rank_numb = "第二名：";
+    				break;
+    				case 3:
+    				rank_numb = "第三名：";
+    				break;
+    				default:
+    				rank_numb = "第三以外忽略不计"
+    				break;
+    			}
+    			all += "<li>"+rank_numb+newArr[i][0]+" "+newArr[i][1]+"</li>";
+    			var ul = document.getElementById("aqi-list");
+    			ul.innerHTML = all;
+    		}
+    	})();
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2017-02-26 13:36:02
+ * @version $Id$
+ */
+/*body {
+	padding: 20px;
+}
+.left-part,
+.right-part,
+.mid-part {
+	background-color: white;
+	margin: 20px;
+}
+.left-part,
+.right-part {
+	position: absolute;
+	border: 1px solid #999;
+	padding: 19px;
+	margin: 20px;
+	top: 20px;
+}
+.main {
+	background-color: #eee;
+	padding: 20px;
+}
+.left-part {
+	width: 160px;
+	left: 20px;
+	display: -webkit-flex;
+}
+.right-part {
+	width: 80px;
+	right: 20px;
+}
+.mid-part {
+	margin:0 160px 0 240px;
+	border: 1px solid #999;
+	padding: 20px;
+}
+.right-part img{
+	padding: 10px 0;
+}*/
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	padding: 20px;
+}
+.main{
+	background-color: #eee;
+	border: 1px solid #999;
+}
+.left-part,
+.mid-part,
+.right-part {
+	background-color: white;
+	margin: 20px;
+	padding:20px;
+	border: 1px solid #999;
+}
+.left-part {
+	position: absolute;
+	width: 160px;
+	display: -webkit-flex;
+	left: 20px;
+}
+.right-part {
+	position: absolute;
+	right: 20px;
+	width:80px;
+	top: 20px;
+}
+.right-part img {
+	margin:10px 0;
+}
+.mid-part {
+	margin: 20px 160px 20px 240px;
+}

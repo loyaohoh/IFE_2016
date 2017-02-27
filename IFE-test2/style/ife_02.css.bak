@@ -1,0 +1,39 @@
+*{
+	margin:	0px;
+	padding:0px;
+}
+body {
+	font-family:	sans-serif;
+	background:		#dedede;
+}
+header {
+	position:relative;
+	height:65px;
+	background:#333;
+}
+header p img{
+	padding-left:20px;
+	height:58px;
+}
+header ul{
+	position:absolute;
+	top:0px;
+	right:10px;
+}
+header ul li {
+	text-align:center;
+	width:60px;
+	display:block;
+	float:left;
+	padding:20px 10px;
+}
+header ul li a{
+	text-decoration:none;
+	color:white;
+	font-size:12px;
+}
+header ul li:hover{
+	boder-bottom:1px solid red;
+	background:#474747;
+	border-radius: 3px;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>javascript基础三</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <ul id="source">
+    	<li>北京空气质量：<b>90</b></li>
+    	<li>上海空气质量：<b>70</b></li>
+    	<li>天津空气质量：<b>80</b></li>
+    	<li>广州空气质量：<b>50</b></li>
+    	<li>深圳空气质量：<b>40</b></li>
+    	<li>福州空气质量：<b>32</b></li>
+    	<li>成都空气质量：<b>90</b></li>
+    </ul>
+    <ul id="resort">
+    	<!--<li>第一名：北京空气质量：<b>90</b></li>-->
+    </ul>
+    <button id="sort-btn">排序</button>
+    <script type="text/javascript">
+    	function getDate() {
+    		//code here
+    		var ul = document.getElementById("source");
+    		var date = [];
+    		for(var i = 0; i < ul.childElementCount; i++) {
+    			var li = ul.children[i];
+    			var strCity = li.innerHTML.split("空气质量：")[0];
+    			var num = Number(li.children[0].innerHTML);
+    			date.push([strCity,num]);
+    			/*date=[
+    				["北京"，90]
+    				.......
+    			]*/
+    		}
+    		return date;
+    	}
+    	//接下来对数组进行排序
+    	function sortAqiDate(date) {
+    		date.sort(function(a,b) {
+    			return a[1] - b[1];
+    		})
+    		return date;
+    	}
+    	function render(date){
+    		var ul = document.getElementById("resort");
+    		var items = "";
+    		for(var i = 0; i < date.length; i++){
+    			var aqiDate = date[i];
+    			items += "<li>第" + (i+1) + "名" + aqiDate[0] +"空气质量：<b>" + aqiDate[1] +"</b></li>";
+    		}
+    		ul.innerHTML = items;
+    	}
+    	function btnHandle() {
+    		var aqiDate = getDate();
+    		aqiDate = sortAqiDate(aqiDate);
+    		render(aqiDate);
+    		//var btn = document.getElementById("sort-btn");
+    		//btn.disabled = true;
+    	}
+    	//接下来给sort-btn绑定一个事件
+    	function init() {
+    		var btn = document.getElementById("sort-btn");
+    		btn.onclick = btnHandle;
+    	}
+    	init();
+    </script>
+</body>
+</html>
